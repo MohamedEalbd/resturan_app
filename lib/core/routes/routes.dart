@@ -31,4 +31,5 @@ class Routes {
   static const coupon = "coupon";
   static const promotionScreen = "promotionScreen";
   static const addonsScreen = "addonsScreen";
+  static const dateScreen = "dateScreen";
 }

@@ -119,7 +119,23 @@ class CodegenLoader extends AssetLoader{
   "subtotal": "المجموع الفرعي",
   "address": " العنوان",
   "quantity": "الكميه",
-  "cutlery": "أدوات المائدة"
+  "cutlery": "أدوات المائدة",
+  "extraChicken": "دجاج إضافي",
+  "enterEmail": "أدخل البريد الإلكتروني",
+  "signIn": "تسجيل الدخول",
+  "signUp": "التسجيل",
+  "haveAnAccount": "هل لديك حساب",
+  "notHaveAnAccount": "ليس لدي حساب",
+  "registerNow": "سجل الآن",
+  "minDeliveryTime": "الحد الأدنى لوقت التسليم",
+  "maxDeliveryTime": "الحد الأقصى لوقت التسليم",
+  "zoneId": "معرف المنطقة",
+  "coverPhoto": "صورة الغلاف",
+  "logo": "الشعار",
+  "deliveryTimeType": "نوع وقت التسليم",
+  "translations": "الترجمات",
+  "fName": "الاسم",
+  "vat": "حوض"
 };
 static const Map<String,dynamic> en = {
   "hi": "Hello",
@@ -227,7 +243,23 @@ static const Map<String,dynamic> en = {
   "subtotal": "Subtotal",
   "address": "Address",
   "quantity": "Quantity",
-  "cutlery": "Cutlery"
+  "cutlery": "Cutlery",
+  "extraChicken": "Extra Chicken",
+  "enterEmail": "enter email",
+  "signIn": "Sign in",
+  "signUp": "sign up",
+  "haveAnAccount": "Have an account",
+  "notHaveAnAccount": "Not have an account",
+  "registerNow": "Register now",
+  "minDeliveryTime": "Min delivery time",
+  "maxDeliveryTime": "Max delivery time",
+  "zoneId": "Zone Id",
+  "logo": "Logo",
+  "coverPhoto": "cover photo",
+  "vat": "vat",
+  "deliveryTimeType": "delivery Time Type",
+  "translations": "translations",
+  "fName": "fName"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

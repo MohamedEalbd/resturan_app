@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:restaurant/build_injection.dart';
 import 'package:restaurant/core/routes/routes_generator.dart';
+import 'package:restaurant/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:restaurant/features/chat/cubit/chat_cubit.dart';
 import 'package:restaurant/features/coupon/cubit/coupon_cubit.dart';
 import 'package:restaurant/features/food_mangement/cubit/food_mangement_cubit.dart';
@@ -55,7 +56,9 @@ class MyApp extends StatelessWidget {
                 create: (context) => getIt<SettingsCubit>()),
             BlocProvider<LangCubit>(create: (context) => getIt<LangCubit>()),
             BlocProvider<ChatCubit>(create: (context) => getIt<ChatCubit>()),
-             BlocProvider<CouponCubit>(create: (context) => getIt<CouponCubit>()),
+            BlocProvider<CouponCubit>(
+                create: (context) => getIt<CouponCubit>()),
+            BlocProvider<AuthCubit>(create: (context) => getIt<AuthCubit>()),
           ],
           child: MaterialApp(
             localizationsDelegates: context.localizationDelegates,

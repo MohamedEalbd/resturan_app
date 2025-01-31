@@ -103,5 +103,22 @@
     "subtotal": "المجموع الفرعي",
     "address":" العنوان",
     "quantity":"الكميه",
-    "cutlery":"أدوات المائدة"
+    "cutlery":"أدوات المائدة",
+    "extraChicken":"دجاج إضافي",
+    "enterEmail":"أدخل البريد الإلكتروني",
+    "signIn":"تسجيل الدخول",
+    "signUp":"التسجيل",
+    "haveAnAccount":"هل لديك حساب",
+    "notHaveAnAccount":"ليس لدي حساب",
+    "registerNow":"سجل الآن",
+    "minDeliveryTime":"الحد الأدنى لوقت التسليم",
+    "maxDeliveryTime":"الحد الأقصى لوقت التسليم",
+    "zoneId":"معرف المنطقة",
+    "coverPhoto":"صورة الغلاف",
+    "logo":"الشعار",
+    "deliveryTimeType":"نوع وقت التسليم",
+    "translations":"الترجمات",
+    "fName":"الاسم",
+    "vat":"حوض"
+    
 }

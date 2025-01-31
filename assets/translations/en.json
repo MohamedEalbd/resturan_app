@@ -104,5 +104,23 @@
     "subtotal": "Subtotal",
     "address":"Address",
     "quantity":"Quantity",
-    "cutlery":"Cutlery"
+    "cutlery":"Cutlery",
+    "extraChicken":"Extra Chicken",
+    "enterEmail":"enter email",
+    "signIn":"Sign in",
+    "signUp":"sign up",
+    "haveAnAccount":"Have an account",
+    "notHaveAnAccount":"Not have an account",
+    "registerNow":"Register now",
+    "minDeliveryTime":"Min delivery time",
+    "maxDeliveryTime":"Max delivery time",
+    "zoneId":"Zone Id",
+    "logo":"Logo",
+    "coverPhoto":"cover photo",
+    "vat":"vat",
+    "deliveryTimeType":"delivery Time Type",
+    "translations":"translations",
+    "fName":"fName"
+
+
 }

@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurant/core/routes/routes.dart';
 import 'package:restaurant/features/addons/screen/addons_screen.dart';
+import 'package:restaurant/features/auth/presentation/screens/login_screen.dart';
+import 'package:restaurant/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:restaurant/features/bank_info/screen/bank_info_screen.dart';
 import 'package:restaurant/features/chat/screen/chat_screen.dart';
 import 'package:restaurant/features/coupon/screen/add_coupon_screen.dart';
@@ -16,10 +18,12 @@ import 'package:restaurant/features/home/screen/my_order_details.dart';
 import 'package:restaurant/features/home_tap/screen/home_tap_screen.dart';
 import 'package:restaurant/features/lang/screen/lang_screen.dart';
 import 'package:restaurant/features/order_history/screen/my_order_details_screen.dart';
+import 'package:restaurant/features/profile/models/profile_response_model.dart';
 import 'package:restaurant/features/profile/screen/edit_profile_screen.dart';
 import 'package:restaurant/features/profile/screen/profile_screen.dart';
 import 'package:restaurant/features/quick/screen/quick_screen.dart';
 import 'package:restaurant/features/quick/screen/quick_withdraw.dart';
+import 'package:restaurant/features/report/screen/date_screen.dart';
 import 'package:restaurant/features/report/screen/report_screen.dart';
 import 'package:restaurant/features/settings/screen/rule_settings_screen.dart';
 import 'package:restaurant/features/settings/screen/settings_screen.dart';
@@ -37,7 +41,11 @@ class RoutesGenerator {
     switch (nameRoute) {
       case Routes.splash:
         return _buildRoute(const SplashScreen(), isIos);
-      case Routes.forgetPassword:
+      case Routes.login:
+        return _buildRoute(const LoginScreen(), isIos);
+      case Routes.signUp:
+        return _buildRoute(const SignUpScreen(), isIos);
+      case Routes.home:
         return _buildRoute(const HomeScreen(), isIos);
       case Routes.homeTap:
         return _buildRoute(const HomeTapScreen(), isIos);
@@ -60,7 +68,11 @@ class RoutesGenerator {
       case Routes.quickWithdrawScreen:
         return _buildRoute(const QuickWithdrawScreen(), isIos);
       case Routes.editProfile:
-        return _buildRoute(const EditProfileScreen(), isIos);
+      if(arg is ProfileResponseModel) {
+        return _buildRoute( EditProfileScreen(user:arg), isIos);
+      }else{
+        return _buildRoute(const UndefinedWidget(), isIos);
+      }
       case Routes.settings:
         return _buildRoute(const SettingsScreen(), isIos);
       case Routes.ruleSettingsScreen:
@@ -79,6 +91,8 @@ class RoutesGenerator {
         return _buildRoute(const PromotionScreen(), isIos);
       case Routes.addonsScreen:
         return _buildRoute(const AddonsScreen(), isIos);
+      case Routes.dateScreen:
+        return _buildRoute(const DateScreen(), isIos);
       case Routes.myOrderDetails:
         if (arg is MyOrder) {
           return _buildRoute(MyOrderDetails(myOrder: arg), isIos);

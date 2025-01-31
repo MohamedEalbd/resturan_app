@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:restaurant/shared/resources/image_resources.dart';
 
 ImageProvider<Object>? profileImage({Uint8List? image, String? imageUrl}) {
   if (image == null) {
@@ -22,7 +23,7 @@ Widget? profileWidget({Uint8List? image, String? imageUrl}) {
     } else {
       return FancyShimmerImage(
         imageUrl: imageUrl,
-        errorWidget: const Text("error..."),
+        errorWidget: Image.asset(ImageResources.picProfile),
         // shimmerBaseColor: randomColor(),
         // shimmerHighlightColor: randomColor(),
         // shimmerBackColor: randomColor(),

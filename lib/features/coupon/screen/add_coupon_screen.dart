@@ -6,7 +6,6 @@ import 'package:restaurant/core/classes/responsive_screen.dart';
 import 'package:restaurant/features/coupon/cubit/coupon_cubit.dart';
 import 'package:restaurant/features/food_mangement/widgets/title_widget.dart';
 import 'package:restaurant/shared/classes/text_style.dart';
-import 'package:restaurant/shared/resources/image_resources.dart';
 import 'package:restaurant/shared/widgets/build_button_widget.dart';
 import 'package:restaurant/shared/widgets/leading_app_bar.dart';
 import 'package:restaurant/shared/widgets/textformfield.dart';

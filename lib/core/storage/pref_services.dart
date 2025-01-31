@@ -1,38 +1,44 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PrefServices {
-  static SharedPreferences? sharedPreferences;
+  PrefServices._();
+  static final PrefServices _instance = PrefServices._();
+  //* this helps me to take instance of SecureStorageService and access to class
+  factory PrefServices() => _instance;
+  static PrefServices get instance => _instance;
 
-  static init() async {
-    sharedPreferences = await SharedPreferences.getInstance();
+  static SharedPreferences? _sharedPreferences;
+
+   init() async {
+    _sharedPreferences = await SharedPreferences.getInstance();
   }
 
-  static Future<bool> saveData(
+   Future<bool> saveData(
       {required String key, required dynamic value}) async {
     if (value is String) {
-      return await sharedPreferences!.setString(key, value);
+      return await _sharedPreferences!.setString(key, value);
     } else if (value is int) {
-      return await sharedPreferences!.setInt(key, value);
+      return await _sharedPreferences!.setInt(key, value);
     } else if (value is double) {
-      return await sharedPreferences!.setDouble(key, value);
+      return await _sharedPreferences!.setDouble(key, value);
     } else {
-      return await sharedPreferences!.setBool(key, value);
+      return await _sharedPreferences!.setBool(key, value);
     }
   }
 
-  static dynamic getData({required String key}) {
-    return  sharedPreferences!.get(key);
+   dynamic getData({required String key}) {
+    return _sharedPreferences!.get(key);
   }
 
-  static bool containKey({required String key}) {
-    return sharedPreferences!.containsKey(key);
+   bool containKey({required String key}) {
+    return _sharedPreferences!.containsKey(key);
   }
 
-  static Future<bool> removeValue(key) async {
-    return await sharedPreferences!.remove(key);
+   Future<bool> removeValue(key) async {
+    return await _sharedPreferences!.remove(key);
   }
 
-  static Future<bool> clearAllData() async {
-    return await sharedPreferences!.clear();
+   Future<bool> clearAllData() async {
+    return await _sharedPreferences!.clear();
   }
 }

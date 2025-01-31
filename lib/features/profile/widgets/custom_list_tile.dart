@@ -18,40 +18,43 @@ class CustomListTileProfile extends StatelessWidget {
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16.w),
+    return GestureDetector(
+      onTap: onTap,
       child: Container(
-        //height: 40.h,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.r),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black38.withOpacity(0.2),
-              blurRadius: 8.0,
-              offset: Offset(0, 5),
-              spreadRadius: 4,
-            ),
-          ],
-        ),
-        child: ListTile(
-          leading: image == null
-              ? Icon(
-                  icon,
-                  color: Colors.black,
-                )
-              : Image.asset(image!),
-          title: Text(
-            title,
-            style: AppTextStyle.textStyle(
-              appFontSize: 14.sp,
-              appFontWeight: FontWeight.w600,
-              appFontHeight: 16.94.sp,
-              color: Color(0xff1E1E1E),
-            ),
+        margin: EdgeInsets.symmetric(horizontal: 16.w),
+        child: Container(
+          //height: 40.h,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.r),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black38.withOpacity(0.2),
+                blurRadius: 8.0,
+                offset: Offset(0, 5),
+                spreadRadius: 4,
+              ),
+            ],
           ),
-          trailing: widget,
+          child: ListTile(
+            leading: image == null
+                ? Icon(
+                    icon,
+                    color: Colors.black,
+                  )
+                : Image.asset(image!),
+            title: Text(
+              title,
+              style: AppTextStyle.textStyle(
+                appFontSize: 14.sp,
+                appFontWeight: FontWeight.w600,
+                appFontHeight: 16.94.sp,
+                color: Color(0xff1E1E1E),
+              ),
+            ),
+            trailing: widget,
+          ),
         ),
       ),
     );

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:restaurant/core/apis/links/api_keys.dart';
+import 'package:restaurant/core/classes/set_up_myApp.dart';
 import 'package:restaurant/core/routes/routes.dart';
+import 'package:restaurant/core/storage/secure_storage_service.dart';
 import 'package:restaurant/shared/extentions/navigations.dart';
 import 'package:restaurant/shared/resources/image_resources.dart';
 
@@ -15,9 +18,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    //ThemeCubit.instance.initSharedData();
-    Future.delayed(const Duration(milliseconds: 3000), () {
-      context.pushReplacementNamed(Routes.homeTap);
+    init();
+  }
+
+  init() async {
+    await SetUpMyApp.getLocation(context);
+    Future.delayed(const Duration(milliseconds: 3000), () async {
+      if (await SecureStorageService.instance.containsKey(key: ApiKeys.token) ==
+          true) {
+        context.pushReplacementNamed(Routes.homeTap);
+      } else {
+        context.pushReplacementNamed(Routes.login);
+      }
     });
   }
 
@@ -26,9 +38,9 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Container(
-         height: 100.h,
-           width: 120.w,
-          padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+          height: 100.h,
+          width: 120.w,
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
           decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [
@@ -45,9 +57,4 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
     );
   }
-
-  // getFirst() async {
-  //   await SetUpMyApp.getLocation(context);
-  //   context.pushReplacementNamed(Routes.home);
-  // }
 }

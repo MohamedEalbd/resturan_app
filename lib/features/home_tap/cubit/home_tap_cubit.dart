@@ -3,7 +3,6 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurant/features/coupon/screen/promotion_screen.dart';
-import 'package:restaurant/features/food_mangement/screens/manage_screen.dart';
 import 'package:restaurant/my_app.dart';
 import 'package:restaurant/features/home/screen/home_screen.dart';
 import 'package:restaurant/features/order_history/screen/order_history_screen.dart';

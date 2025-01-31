@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:restaurant/core/storage/secure_storage_service.dart';
 
 import '../links/api_keys.dart';
 import 'api_services.dart';
@@ -16,8 +18,8 @@ class HttpServices extends ApiServices {
   }) async {
     try {
       final response = await http.delete(Uri.parse(path), body: data, headers: {
-        ApiKeys.token: ""
-        // "FOODAPI ${PrefServices.getData(key: ApiKeys.token) != null ? PrefServices.getData(key: ApiKeys.token) : null}"
+        ApiKeys.token:
+            "Vendor ${SecureStorageService.instance.getValue(key: ApiKeys.token) != null ? SecureStorageService.instance.getValue(key: ApiKeys.token) : null}"
       });
       return response.body;
     } on HttpException catch (e) {
@@ -36,8 +38,8 @@ class HttpServices extends ApiServices {
   }) async {
     try {
       final response = await http.get(Uri.parse(path), headers: {
-        //ApiKeys.token: ""
-        // "FOODAPI ${PrefServices.getData(key: ApiKeys.token) != null ? PrefServices.getData(key: ApiKeys.token) : null}"
+        ApiKeys.token:
+            "Vendor ${SecureStorageService.instance.getValue(key: ApiKeys.token) != null ? SecureStorageService.instance.getValue(key: ApiKeys.token) : null}"
       });
       if (response.statusCode == 200) {
         print("status code ${response.statusCode}");
@@ -60,8 +62,8 @@ class HttpServices extends ApiServices {
   }) async {
     try {
       final response = await http.patch(Uri.parse(path), body: data, headers: {
-        ApiKeys.token: ""
-        // "FOODAPI ${PrefServices.getData(key: ApiKeys.token) != null ? PrefServices.getData(key: ApiKeys.token) : null}"
+        ApiKeys.token:
+            "Vendor ${SecureStorageService.instance.getValue(key: ApiKeys.token) != null ? SecureStorageService.instance.getValue(key: ApiKeys.token) : null}"
       });
       return response.body;
     } on HttpException catch (e) {
@@ -82,7 +84,9 @@ class HttpServices extends ApiServices {
     try {
       final response =
           await http.post(Uri.parse(path), body: data, headers: {});
-      return response.body;
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body);
+      }
     } on HttpException catch (e) {
       throw Exception(e.message);
     } catch (e) {

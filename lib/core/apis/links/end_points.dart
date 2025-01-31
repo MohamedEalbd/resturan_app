@@ -1,20 +1,21 @@
 class EndPoints {
-  static const baseUrl = "https://api.alquran.cloud/v1/";
-  static const getData = "quran/ar.alafasy";
-  static const getDataForSa3d = "quran/en.asad";
-  static String search(String word) {
-    return "search/${word}/all/en";
+  static const baseUrl = "https://kanz.nixtzone.com";
+  static const signUp = "/api/v1/auth/vendor/register";
+  
+  static login(String email, String password) {
+    return "/api/v1/auth/vendor/login?email=$email&password=$password";
   }
 
-  static const signIn = "user/signin";
-  static const logOut = "user/logout";
-  static const update = "user/update";
-  static const checkEmail = "user/check-email";
-  static String getEndPointUser(id) {
-    return "user/get-user/$id";
+  static getPackages(String email, String password) {
+    return "/api_v1_vendor_package_view?email=$email&password=$password";
+  }
+  static getDataProfile(String email, String password) {
+    return "/api/v1/vendor/profile?email=$email&password=$password";
+  }
+  static updateProfile(String fName, String lName,String phone) {
+    return "/api/v1/vendor/update-profile?f_name=$fName&l_name=$lName&phone=$phone";
   }
 
-  static String get getEndDeleteUser {
-    return "user/delete";
-  }
+  static const campaign = "/api/v1/vendor/campaign-leave";
+  static const updateAnnouncment = "//api/v1/vendor/update-announcment";
 }

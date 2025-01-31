@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:restaurant/core/routes/routes.dart';
 import 'package:restaurant/features/report/widgets/text_field.dart';
 import 'package:restaurant/shared/classes/text_style.dart';
+import 'package:restaurant/shared/extentions/navigations.dart';
 import 'package:restaurant/shared/widgets/leading_app_bar.dart';
 import 'package:restaurant/shared/widgets/titleAppBar.dart';
 
@@ -27,7 +29,9 @@ class ReportScreen extends StatelessWidget {
                   hintText: 'Search with order id',
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    context.pushNamed(Routes.dateScreen);
+                  },
                   child: Container(
                     height: 40.h,
                     width: 43.w,

@@ -4,6 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:restaurant/shared/classes/text_style.dart';
 import 'package:restaurant/shared/widgets/leading_app_bar.dart';
 import 'package:restaurant/shared/widgets/titleAppBar.dart';
+import 'package:restaurant/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
+
 
 class AddonsScreen extends StatelessWidget {
   const AddonsScreen({super.key});
@@ -23,7 +26,7 @@ class AddonsScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         leading: LeadingAppBar(),
-        title: TitleAppBar(title: "Addons"),
+        title: TitleAppBar(title: LocaleKeys.addons.tr()),
       ),
       body: ListView.builder(
           padding: EdgeInsets.symmetric(horizontal: 16.w),

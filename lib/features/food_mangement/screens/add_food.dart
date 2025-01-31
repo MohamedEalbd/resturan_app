@@ -9,7 +9,6 @@ import 'package:restaurant/shared/widgets/build_button_widget.dart';
 import 'package:restaurant/translations/locale_keys.g.dart';
 
 import '../../../shared/classes/text_style.dart';
-import '../../../shared/resources/image_resources.dart';
 import '../../../shared/widgets/leading_app_bar.dart';
 import '../../../shared/widgets/textformfield.dart';
 import '../../../shared/widgets/titleAppBar.dart';

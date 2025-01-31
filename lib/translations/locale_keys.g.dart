@@ -106,5 +106,21 @@ abstract class  LocaleKeys {
   static const address = 'address';
   static const quantity = 'quantity';
   static const cutlery = 'cutlery';
+  static const extraChicken = 'extraChicken';
+  static const enterEmail = 'enterEmail';
+  static const signIn = 'signIn';
+  static const signUp = 'signUp';
+  static const haveAnAccount = 'haveAnAccount';
+  static const notHaveAnAccount = 'notHaveAnAccount';
+  static const registerNow = 'registerNow';
+  static const minDeliveryTime = 'minDeliveryTime';
+  static const maxDeliveryTime = 'maxDeliveryTime';
+  static const zoneId = 'zoneId';
+  static const coverPhoto = 'coverPhoto';
+  static const logo = 'logo';
+  static const deliveryTimeType = 'deliveryTimeType';
+  static const translations = 'translations';
+  static const fName = 'fName';
+  static const vat = 'vat';
 
 }
